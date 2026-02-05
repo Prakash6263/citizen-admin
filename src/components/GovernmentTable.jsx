@@ -362,17 +362,16 @@ export default function GovernmentTable() {
                     ) : (
                       tableData.map((row) => (
                         <tr key={row._id} className="table-row-clickable">
-                          <td>{row.applicantId?.governmentName || "N/A"}</td>
-                          <td>{row.applicantId?.entityType || "Government"}</td>
-                          <td>{row.applicantId?.country || "N/A"}</td>
-                          <td>{row.applicantId?.province || "N/A"}</td>
-                          <td>{row.applicantId?.city || "N/A"}</td>
-                          <td>{row.applicantId?.representativeName || "N/A"}</td>
-                          <td>{row.applicantId?.institutionalEmail || "N/A"}</td>
+                          <td>{row.applicantData?.governmentName || "N/A"}</td>
+                          <td>{row.applicantData?.entityType || "Government"}</td>
+                          <td>{row.applicantData?.country || "N/A"}</td>
+                          <td>{row.applicantData?.province || "N/A"}</td>
+                          <td>{row.applicantData?.city || "N/A"}</td>
+                          <td>{row.applicantData?.representativeName || "N/A"}</td>
+                          <td>{row.applicantData?.email || "N/A"}</td>
                           <td>
-                            <span className={`badge-status badge-${row.applicantId?.status || row.status}`}>
-                              {(row.applicantId?.status || row.status)?.charAt(0).toUpperCase() +
-                                (row.applicantId?.status || row.status)?.slice(1)}
+                            <span className={`badge-status badge-${row.status}`}>
+                              {row.status?.charAt(0).toUpperCase() + row.status?.slice(1)}
                             </span>
                           </td>
                           <td>
